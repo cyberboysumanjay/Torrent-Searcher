@@ -27,7 +27,7 @@ As simple as that!
 
 
 #### [About me](https://cyberboysumanjay.github.io)
-#### [Telegram Contact](t.me/cyberboysumanjay)
+#### [Telegram Contact](https://t.me/cyberboysumanjay)
 
 
 ----
