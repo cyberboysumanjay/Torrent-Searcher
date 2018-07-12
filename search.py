@@ -3,7 +3,8 @@ import pyperclip
 import requests
 
 def piratebay_search(query):
-    url='https://pirateproxy.mx/search/'+query+'/0/99/0'
+    scrapper_api='https://api.scraperapi.com/?key=2500866341976677504461594942127656&url='
+    url=scrapper_api+'https://pirateproxy.mx/search/'+query+'/0/99/0'
     print("Searching......")
     source=requests.get(url).text
     soup=bs(source,'lxml')
@@ -25,8 +26,9 @@ def piratebay_search(query):
     print ("Your magnet link is now in your clipboard.")
 
 def kickass_search(query):
+    scrapper_api='https://api.scraperapi.com/?key=2500866341976677504461594942127656&url='
     base_url="https://kickass.unblocked.vet/usearch/"
-    url=base_url+query+'/'
+    url=scrapper_api+base_url+query+'/'
     print("Searching......")
     source=requests.get(url).text
     soup=bs(source,'lxml')
