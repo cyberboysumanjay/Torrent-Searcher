@@ -3,9 +3,8 @@ import pyperclip
 import requests
 
 def kickass_search(query):
-    scrapper_api='https://api.scraperapi.com/?key=2500866341976677504461594942127656&url='
-    base_url="https://kickass.unblocked.vet/usearch/"
-    url=scrapper_api+base_url+query+'/'
+    base_url="https://kat.unblocked.gdn/usearch/"
+    url=base_url+query+'/'
     print("Searching......")
     source=requests.get(url).text
     soup=bs(source,'lxml')

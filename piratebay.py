@@ -3,8 +3,7 @@ import pyperclip
 import requests
 
 def piratebay_search(query):
-    scrapper_api='https://api.scraperapi.com/?key=2500866341976677504461594942127656&url='
-    url=scrapper_api+'https://pirateproxy.mx/search/'+query+'/0/99/0'
+    url='https://pirateproxy.gdn/search/'+query+'/0/99/0'
     print("Searching......")
     source=requests.get(url).text
     soup=bs(source,'lxml')
