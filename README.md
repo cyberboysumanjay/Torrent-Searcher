@@ -7,6 +7,7 @@
 ## Supported Search Engines:
 1. [**ThePirateBay**](https://proxybay.bz/)
 2. [**Kickass Torrent**](https://kickass.unblocked.lat/)
+3. [**Zooqle**](https://zooqle1.unblocked.is/)
 3. __.....many more to come!__
 --------------------------------------
 --------------------------------------
@@ -14,6 +15,13 @@
 Very Simple to use, just enter your search query and it will fetch all the results from the search engines, select your desired result and it will copy the **Magnet Link of the Torrent** in your **Clipboard!**
 
 As simple as that!
+
+#Dependencies:
+1. BeautifulSoup4
+2. Requests
+3. urllib
+4. pyperclip
+5. lxml
 
 --------------------------------------
 --------------------------------------

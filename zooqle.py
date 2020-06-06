@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup as bs
 import requests
 import urllib.parse
 import pyperclip
-import colored
-from colored import stylize
+#import colored
+#from colored import stylize
 import re
 
-def zooqle_search(query):
+def zooqle_search(query, doDownload):
     url='https://zooqle.unblocked.gdn/search?q='+query
     print("Searching......")
     source=requests.get(url).text
@@ -20,14 +20,15 @@ def zooqle_search(query):
         print()
         i+=1
 
-    index=int(input("Select one from the list below: \n"))
-    m=[]
-    for links in magnet_results:
-        m.append(links['href'])
-    magnet_link=m[index-1]
-#    print(magnet_link)
-    pyperclip.copy(magnet_link)
-    print("Magnet link of the selected movie is copied to clipboard!")
+    if doDownload == True:
+        index=int(input("Select one from the list below: \n"))
+        m=[]
+        for links in magnet_results:
+            m.append(links['href'])
+        magnet_link=m[index-1]
+   #    print(magnet_link)
+        pyperclip.copy(magnet_link)
+        print("Magnet link of the selected movie is copied to clipboard!")
 
 
 
