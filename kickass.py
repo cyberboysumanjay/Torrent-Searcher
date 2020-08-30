@@ -3,7 +3,7 @@ import pyperclip
 import requests
 
 def kickass_search(query, doDownload):
-    base_url="https://kickasss.to/"
+    base_url="https://kickass.unblockit.top/search.php?q="
     url=base_url+query+'/'
     print("Searching......")
     source=requests.get(url).text
