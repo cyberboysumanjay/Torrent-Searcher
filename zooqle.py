@@ -8,7 +8,7 @@ import pyperclip
 import re
 
 def zooqle_search(query, doDownload):
-    url='https://zooqle.unblocked.gdn/search?q='+query
+    url="https://zooqle.unblockit.top/search?q="+query
     print("Searching......")
     source=requests.get(url).text
     soup=bs(source,'lxml')
@@ -16,6 +16,7 @@ def zooqle_search(query, doDownload):
 #    print(magnet_results)
     i=1
     for a in soup.find_all('a',class_=' small', href=True):
+        len(a)
         print (i," :", a['href'][1:-11])
         print()
         i+=1
