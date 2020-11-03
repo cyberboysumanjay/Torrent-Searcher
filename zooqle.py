@@ -1,36 +1,43 @@
-import json
 from bs4 import BeautifulSoup as bs
-import requests
-import urllib.parse
 import pyperclip
-#import colored
-#from colored import stylize
-import re
+import requests
+# import json
+# import urllib.parse
+# import colored
+# from colored import stylize
+# import re
+
 
 def zooqle_search(query, doDownload):
-    url="https://zooqle.unblockit.top/search?q="+query
-    print("Searching......")
-    source=requests.get(url).text
-    soup=bs(source,'lxml')
-    magnet_results=soup.find_all('a',title='Magnet link',href=True)
-#    print(magnet_results)
-    i=1
-    for a in soup.find_all('a',class_=' small', href=True):
-        len(a)
-        print (i," :", a['href'][1:-11])
-        print()
-        i+=1
+    url = "https://zooqle.unblockit.top/search?q=" + query
+    print("Searching......\n")
+    source = requests.get(url).text
+    soup = bs(source, 'lxml')
+    table_entries = soup.find_all('tr')
+    magnet_links = []
 
-    if doDownload == True:
-        index=int(input("Select one from the list below: \n"))
-        m=[]
-        for links in magnet_results:
-            m.append(links['href'])
-        magnet_link=m[index-1]
-   #    print(magnet_link)
+    ind = 1
+
+    for i in table_entries:
+        if i.contents[1].text is not '':
+            print(ind, i.contents[1].text)
+            print()
+            ind += 1
+        try:
+            magnet_links.append(i.contents[2].ul.contents[1].a['href'])
+        except:
+            pass
+
+        
+
+    if doDownload:
+        index = int(input("Select one from the list below: \n"))
+        print()
+        
+        magnet_link = magnet_links[index - 1]
+        # print(magnet_link)
         pyperclip.copy(magnet_link)
         print("Magnet link of the selected movie is copied to clipboard!")
 
 
-
-#zooqle_search(query)
+# zooqle_search(query, True)
