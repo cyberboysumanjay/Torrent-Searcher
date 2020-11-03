@@ -16,7 +16,7 @@ def kickass_search(query, doDownload):
         print(i, r.text)
         i = i + 1
 
-    if doDownload == True:
+    if doDownload:
         print("Enter the Serial Number of the search item you like to download: ")
         choice = int(input())
         print("Fetching data.....")

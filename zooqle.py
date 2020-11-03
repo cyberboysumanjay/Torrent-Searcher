@@ -39,5 +39,3 @@ def zooqle_search(query, doDownload):
         pyperclip.copy(magnet_link)
         print("Magnet link of the selected movie is copied to clipboard!")
 
-
-# zooqle_search(query, True)
